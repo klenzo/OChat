@@ -1,0 +1,16 @@
+Tout d'abord salut à toi !
+Voilà je te présente mon chat, il contient 3 dossiers :
+	- css : Comme son nom l'indique c'est le css -> .css/.less
+	- img : C'est pour les images comme le logo, favicon et drapeaux de langues
+	- smileys : Un super bon dossier contenant pour l'instant 62 smileys, pour en ajouter rien de plus simple, on a juste a ajouter le smiley et puis ... rien du tout il sera intégrer au système ! (.png)
+Et puis 8 fichiers ( sans compter celui-ci ) :
+	- app.js : pour tout ce qui est javascript/jquery
+	- bbcode.php : en général tout ce qui est fonction php mais aussi l'affichage des smileys
+	- index.php : Pas besoin d'expliquer :)
+	- langs.php : Comme son nom l'indique pour les langues ... /!\ Le système est fait de tel sorte que la langue par défaut est le francais 
+	- mcs.php : L'envoie du message ( Message Chat Send )
+	- ochat.sql : La BDD pour le système.
+	- online.php : Pour récupérer les tchateur en ligne ( ce qui charge les messages )
+	- rochat.php : Réception et affichage des messages ( Récupérer OChat ) 
+
+Avec tout cela il ne te reste plus qu'a l'utiliser ! :D
