@@ -2,7 +2,7 @@
 	include('langs.php');
 
 	$p = true;
-	try{ $bdd = new PDO('mysql:host=localhost;dbname=ochat;charset=utf8', 'root', ''); }catch (Exception $e){ die('Erreur : ' . $e->getMessage()); }
+	require_once('dbconect.php');
 
 	if(isset($_COOKIE['pseudo']) AND preg_match('/^[a-zA-Z0-9]{3,25}$/', $_COOKIE['pseudo'])){
 		$_SESSION['pseudo'] = $_COOKIE['pseudo'];
@@ -24,10 +24,10 @@
 		<div class="headercontent">
 			<span id="logo" style="background-image: url('img/logo.png');"></span>
 			<strong id="tlogo">OChat</strong>
-			<!-- <div class="lang_box">
+			<div class="lang_box">
 				<a href="?lang=fr" title="Français"><img src="img/french-flag.png" alt="Français"></a>
 				<a href="?lang=en" title="English"><img src="img/english-flag.png" alt="English"></a>
-			</div> -->
+			</div>
 		</div>
 	</div>
 	<div class="warp">

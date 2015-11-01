@@ -1,5 +1,5 @@
 <?php
-	if(!isset($p)){session_start(); include('langs.php'); try{ $bdd = new PDO('mysql:host=localhost;dbname=ochat;charset=utf8', 'root', ''); }catch (Exception $e){ die('Erreur : ' . $e->getMessage()); }}
+	if(!isset($p)){session_start(); include('langs.php'); require_once('dbconect.php');}
 	require('bbcode.php');
 	$req = $bdd->query('SELECT * FROM message ORDER BY time DESC LIMIT 0,30');
 	while($data = $req->fetch()) {

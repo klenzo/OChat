@@ -1,6 +1,6 @@
 <?php
 	if(isset($_POST['submit'])){
-		if(!isset($p)){session_start(); include('langs.php'); try{ $bdd = new PDO('mysql:host=localhost;dbname=ochat;charset=utf8', 'root', ''); }catch (Exception $e){ die('Erreur : ' . $e->getMessage()); }}
+		if(!isset($p)){session_start(); include('langs.php'); require_once('dbconect.php');}
 
 		if(isset($_POST['message']) AND strlen($_POST['message']) >= 2){
 			$message = htmlentities($_POST['message']);

@@ -52,7 +52,8 @@ $(function(){
     setInterval(afficheOnline, 10000);
 
     $('.name').click(function(){
+    	console.log('Hello');
 		var name = $(this).text(), message = $('#message').val();
-		$('#message').val(message + ' ' + name + ' ');
+		$('#message').val(message + ' @' + name + ' ');
     });
 });
