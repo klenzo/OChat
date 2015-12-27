@@ -44,9 +44,14 @@
 				while($file = readdir($dir)) {
 					if($file != '.' && $file != '..' && !is_dir($dirname.$file))	{
 						$icons[] = $file;
-						$file = str_replace('.png', '', $file);
-						echo '<img src="'.$dirname.$file.'.png" alt="'.$file.'" title="'.$file.'" rel-name="'.$file.'" class="icon icon_smileys">';
 
+						$file = explode('.', $file);
+						$ext = $file[1];
+						$file = $file[0];
+
+						// $file = str_replace('.PNG', '.png', $file);
+						// $file = str_replace('.png', '', $file);
+						echo '<img src="'.$dirname.$file.'.'.$ext.'" alt="'.$file.'" title="'.$file.'" rel-name="'.$file.'" class="icon icon_smileys">';
 					}
 				}
 				closedir($dir);
