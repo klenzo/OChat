@@ -66,8 +66,8 @@
 				<p class="notif" id="errorm" style="display:none;"><?= msgshort; ?></p>
 
 				<textarea name="message" id="message" placeholder="<?= message; ?>"><?php if(isset($rmessage)){echo $rmessage;} ?></textarea>
-				<?php if(isset($_SESSION['pseudo']) AND preg_match('/^[a-z|A-Z|0-9| |@|_|-]{3,25}$/', $_SESSION['pseudo'])){ $value = $_SESSION['pseudo']; $type='hidden'; }else{ $value = ''; $type = 'text';} ?>
-				<input type="<?= $type; ?>" name="pseudo" id="pseudo" placeholder="<?= username; ?>" value="<?= $value; ?>">
+				<?php if(isset($_SESSION['pseudo']) AND preg_match('/^[a-z|A-Z|0-9| |@|_|-]{3,25}$/', $_SESSION['pseudo'])){ $value = $_SESSION['pseudo']; $disable='disabled'; }elseif(isset($_COOKIE['pseudo']) AND preg_match('/^[a-z|A-Z|0-9| |@|_|-]{3,25}$/', $_COOKIE['pseudo'])){$value = $_COOKIE['pseudo']; $disable='disabled';}else{ $value = ''; $disable = '';} ?>
+				<input type="<?= $type; ?>" name="pseudo" id="pseudo" <?= $disable; ?> placeholder="<?= username; ?>" value="<?= $value; ?>">
 
 				<img src="<?= $dirname . $icon; ?>" class="icon btn_smileys">
 
