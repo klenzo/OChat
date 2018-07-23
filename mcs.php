@@ -2,7 +2,7 @@
 	if(isset($_POST['submit'])){
 		if(!isset($p)){session_start(); include('langs.php'); require_once('dbconect.php');}
 
-		if(isset($_POST['message']) AND strlen($_POST['message']) >= 2){
+		if(isset($_POST['message']) AND strlen($_POST['message']) >= 2 && strlen($_POST['message']) <= 300){
 			$message = htmlentities($_POST['message']);
 			if(isset($_POST['pseudo']) AND preg_match('/^[a-zA-Z0-9]{3,25}$/', $_POST['pseudo'])){
 				$mpseudo  = $_POST['pseudo'];
@@ -35,6 +35,6 @@
 				$rmessage = $message;
 			}
 		}else{
-			$error = msgshort;
+			$error = msgshortorlong;
 		}
 	}
